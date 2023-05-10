@@ -1,0 +1,2 @@
+﻿  RoboCatServerPCH.cpp
+C:\Users\ethan\Downloads\GD4RoboCatSFML\RoboCatSFML\RoboCatShared.hpp(52,10): fatal error C1083: Cannot open include file: 'SFML\System.hpp': No such file or directory
