@@ -23,7 +23,7 @@ private:
 	vector< SpriteComponent* >		mComponents;
 
 	sf::View view;
-
+	sf::Sprite background;
 
 };
 

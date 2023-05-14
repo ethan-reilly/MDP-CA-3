@@ -4,8 +4,9 @@ std::unique_ptr< RenderManager >	RenderManager::sInstance;
 
 RenderManager::RenderManager()
 {
-	view.reset(sf::FloatRect(0, 0, 1280, 720));
+	view.reset(sf::FloatRect(0, 0, 1920, 1080));
 	WindowManager::sInstance->setView(view);
+	background.setTexture(*TextureManager::sInstance->GetTexture("floor"));
 }
 
 
@@ -71,7 +72,8 @@ void RenderManager::Render()
 	
 	WindowManager::sInstance->clear(sf::Color(255, 204, 204, 255));
 	//Background image
-	WindowManager::sInstance->clear(sf::Image(TextureManager::sInstance->GetTexture("floor")));
+	//WindowManager::sInstance->clear(sf::Image(TextureManager::sInstance->GetTexture("floor")));
+	WindowManager::sInstance->draw(background);
 
 	RenderManager::sInstance->RenderComponents();
 
