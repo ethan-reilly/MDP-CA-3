@@ -11,3 +11,5 @@
 #include "MouseServer.hpp"
 #include "YarnServer.hpp"
 
+#include "../RoboCatSFMLClient/HUD.hpp"
+

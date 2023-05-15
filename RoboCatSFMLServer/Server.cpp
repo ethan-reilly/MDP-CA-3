@@ -54,8 +54,8 @@ namespace
 
 	void CreateRandomMice(int inMouseCount)
 	{
-		Vector3 mouseMin(100.f, 100.f, 0.f);
-		Vector3 mouseMax(1180.f, 620.f, 0.f);
+		Vector3 mouseMin(60.f, 100.f, 0.f);
+		Vector3 mouseMax(1800.f, 980.f, 0.f);
 		GameObjectPtr go;
 
 		//make a mouse somewhere- where will these come from?
@@ -74,7 +74,7 @@ namespace
 void Server::SetupWorld()
 {
 	//spawn some random mice
-	CreateRandomMice(10);
+	CreateRandomMice(15);
 
 	//spawn more random mice!
 	//CreateRandomMice(10);

@@ -1,1 +1,14 @@
-﻿  RoboCatSFMLServer.vcxproj -> C:\Users\ethan\Downloads\GD4RoboCatSFML\MDP-CA-3\Debug\RoboCatSFMLServer.exe
+﻿  RoboCatServerPCH.cpp
+  ClientProxy.cpp
+  MouseServer.cpp
+  NetworkManagerServer.cpp
+  ReplicationManagerServer.cpp
+  ReplicationManagerTransmissionData.cpp
+  RoboCatServer.cpp
+  Server.cpp
+  ServerMain.cpp
+  YarnServer.cpp
+  Generating Code...
+MouseServer.obj : error LNK2019: unresolved external symbol "public: void __thiscall HUD::IncHealth(int)" (?IncHealth@HUD@@QAEXH@Z) referenced in function "public: virtual bool __thiscall MouseServer::HandleCollisionWithCat(class RoboCat *)" (?HandleCollisionWithCat@MouseServer@@UAE_NPAVRoboCat@@@Z)
+MouseServer.obj : error LNK2001: unresolved external symbol "public: static class std::unique_ptr<class HUD,struct std::default_delete<class HUD> > HUD::sInstance" (?sInstance@HUD@@2V?$unique_ptr@VHUD@@U?$default_delete@VHUD@@@std@@@std@@A)
+C:\Users\ethan\Downloads\GD4RoboCatSFML\MDP-CA-3\Debug\RoboCatSFMLServer.exe : fatal error LNK1120: 2 unresolved externals

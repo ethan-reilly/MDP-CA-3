@@ -1,6 +1,7 @@
 #include "RoboCatServerPCH.hpp"
 
 
+
 MouseServer::MouseServer()
 {
 }
@@ -16,8 +17,9 @@ bool MouseServer::HandleCollisionWithCat(RoboCat* inCat)
 	//kill yourself!    :(
 	SetDoesWantToDie(true);
 
-	ScoreBoardManager::sInstance->IncScore(inCat->GetPlayerId(), 1);
-
+	// Change so when you collect mouse, health increases
+	//ScoreBoardManager::sInstance->IncScore(inCat->GetPlayerId(), 1);
+	HUD::sInstance->IncHealth(1);
 	return false;
 }
 

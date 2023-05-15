@@ -35,6 +35,10 @@ void HUD::RenderHealth()
 		RenderText(healthString, mHealthOffset, Colors::Red);
 	}
 }
+void HUD::IncHealth(int Amount)
+{
+		mHealth += Amount;
+}
 
 void HUD::RenderBandWidth()
 {
@@ -78,4 +82,6 @@ void HUD::RenderText(const string& inStr, const Vector3& origin, const Vector3& 
 	text.setFont(*FontManager::sInstance->GetFont("carlito"));
 	WindowManager::sInstance->draw(text);
 }
+
+
 
