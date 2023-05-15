@@ -35,10 +35,10 @@ void HUD::RenderHealth()
 		RenderText(healthString, mHealthOffset, Colors::Red);
 	}
 }
-void HUD::IncHealth(int Amount)
-{
-		mHealth += Amount;
-}
+//void HUD::IncHealth(int Amount)
+//{
+	//	mHealth += Amount;
+//}
 
 void HUD::RenderBandWidth()
 {

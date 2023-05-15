@@ -10,8 +10,8 @@ public:
 	void Render();
 
 	void SetPlayerHealth(int inHealth) { mHealth = inHealth; }
-	int GetPlayerHealth() { return mHealth; }
-	void IncHealth(int Amount);
+	//int GetPlayerHealth() { return mHealth; }
+	//void IncHealth(int Amount);
 
 private:
 

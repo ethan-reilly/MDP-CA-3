@@ -14,12 +14,18 @@ void MouseServer::HandleDying()
 
 bool MouseServer::HandleCollisionWithCat(RoboCat* inCat)
 {
+	// Change so when you collect pickup, health increases
+	inCat->GetHealth()++;
+	//inCat->GetHealth() + 1;
+	
 	//kill yourself!    :(
 	SetDoesWantToDie(true);
 
-	// Change so when you collect mouse, health increases
+	
 	//ScoreBoardManager::sInstance->IncScore(inCat->GetPlayerId(), 1);
-	HUD::sInstance->IncHealth(1);
+	//HUD::sInstance->IncHealth(1);
+
+	
 	return false;
 }
 

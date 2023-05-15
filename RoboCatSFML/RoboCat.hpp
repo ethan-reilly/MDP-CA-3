@@ -34,6 +34,9 @@ public:
 	void			SetVelocity(const Vector3& inVelocity) { mVelocity = inVelocity; }
 	const Vector3& GetVelocity()						const { return mVelocity; }
 
+	uint8_t& GetHealth() { return mHealth; };
+
+	
 	virtual uint32_t	Write(OutputMemoryBitStream& inOutputStream, uint32_t inDirtyState) const override;
 
 protected:
@@ -64,7 +67,7 @@ protected:
 	float				mLastMoveTimestamp;
 
 	float				mThrustDir;
-	int					mHealth;
+	uint8_t					mHealth;
 
 	bool				mIsShooting;
 };
