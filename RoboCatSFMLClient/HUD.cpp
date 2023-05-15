@@ -8,7 +8,7 @@ HUD::HUD() :
 	mBandwidthOrigin(50.f, 10.f, 0.0f),
 	mRoundTripTimeOrigin(580.f, 10.f, 0.0f),
 	mScoreOffset(0.f, 50.f, 0.0f),
-	mHealthOffset(1000, 10.f, 0.0f),
+	mHealthOffset(1700, 10.f, 0.0f),
 	mHealth(0)
 {
 }

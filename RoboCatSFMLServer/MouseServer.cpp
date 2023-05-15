@@ -13,7 +13,7 @@ void MouseServer::HandleDying()
 
 bool MouseServer::HandleCollisionWithCat(RoboCat* inCat)
 {
-	//kill yourself!
+	//kill yourself!    :(
 	SetDoesWantToDie(true);
 
 	ScoreBoardManager::sInstance->IncScore(inCat->GetPlayerId(), 1);
