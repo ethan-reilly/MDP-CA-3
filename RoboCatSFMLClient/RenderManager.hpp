@@ -15,6 +15,8 @@ public:
 	void RemoveComponent(SpriteComponent* inComponent);
 	int	 GetComponentIndex(SpriteComponent* inComponent) const;
 
+	uint8_t FindChefHealth();
+	sf::Vector2f FindChefCenter();
 private:
 
 	RenderManager();
@@ -24,6 +26,8 @@ private:
 
 	sf::View view;
 	sf::Sprite background;
+	sf::Sprite deathscreen;
+	sf::Vector2f m_lastCatPos;
 
 };
 
