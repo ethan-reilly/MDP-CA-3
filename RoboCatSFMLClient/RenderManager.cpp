@@ -7,7 +7,7 @@ RenderManager::RenderManager()
 	view.reset(sf::FloatRect(0, 0, 1920, 1080));
 	WindowManager::sInstance->setView(view);
 	background.setTexture(*TextureManager::sInstance->GetTexture("floor"));
-	deathscreen.setTexture(*TextureManager::sInstance->GetTexture("deathscreen"))
+	deathscreen.setTexture(*TextureManager::sInstance->GetTexture("deathscreen"));
 }
 
 

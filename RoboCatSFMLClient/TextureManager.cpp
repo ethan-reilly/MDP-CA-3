@@ -14,7 +14,7 @@ TextureManager::TextureManager()
 	CacheTexture("yarn", "../Assets/yarn.png");
 
 	CacheTexture("floor", "../Assets/floor.png");
-	CacheTexture("deathscreen", "../Assets/deathscreen.png");
+	CacheTexture("deathscreen", "../Assets/deathscreen.jpg");
 	CacheTexture("winnerscreen", "../Assets/winnerscreen.png");
 }
 
