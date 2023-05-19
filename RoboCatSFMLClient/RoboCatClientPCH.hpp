@@ -7,6 +7,7 @@
 #include "PlayerSpriteComponent.hpp"
 #include "TextureManager.hpp"
 #include "FontManager.hpp"
+#include "SoundManager.hpp"
 #include "RenderManager.hpp"
 #include "WindowManager.hpp"
 
