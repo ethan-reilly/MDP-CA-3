@@ -1,36 +1,4 @@
-﻿  RoboCatClientPCH.cpp
-  Client.cpp
-  ClientMain.cpp
-  FontManager.cpp
-  HUD.cpp
-D:\Multiplayer\MDP-CA-3\RoboCatSFMLClient\HUD.cpp(75,61): warning C4244: 'argument': conversion from 'const float' to 'sf::Uint8', possible loss of data
-D:\Multiplayer\MDP-CA-3\RoboCatSFMLClient\HUD.cpp(75,49): warning C4244: 'argument': conversion from 'const float' to 'sf::Uint8', possible loss of data
-D:\Multiplayer\MDP-CA-3\RoboCatSFMLClient\HUD.cpp(75,37): warning C4244: 'argument': conversion from 'const float' to 'sf::Uint8', possible loss of data
-  InputManager.cpp
-  MouseClient.cpp
-  NetworkManagerClient.cpp
-  PlayerSpriteComponent.cpp
-D:\Multiplayer\MDP-CA-3\RoboCatSFMLClient\PlayerSpriteComponent.cpp(16,73): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Multiplayer\MDP-CA-3\RoboCatSFMLClient\PlayerSpriteComponent.cpp(16,57): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Multiplayer\MDP-CA-3\RoboCatSFMLClient\PlayerSpriteComponent.cpp(16,41): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-  RenderManager.cpp
-  ReplicationManagerClient.cpp
-  RoboCatClient.cpp
+﻿  ReplicationManagerClient.cpp
   SoundManager.cpp
-D:\Multiplayer\MDP-CA-3\RoboCatSFMLClient\SoundManager.cpp(67,28): warning C4305: 'argument': truncation from 'double' to 'float'
-  SpriteComponent.cpp
-D:\Multiplayer\MDP-CA-3\RoboCatSFMLClient\SpriteComponent.cpp(21,42): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-D:\Multiplayer\MDP-CA-3\RoboCatSFMLClient\SpriteComponent.cpp(21,29): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-  TextureManager.cpp
-  WindowManager.cpp
-  YarnClient.cpp
   Generating Code...
   RoboCatSFMLClient.vcxproj -> D:\Multiplayer\MDP-CA-3\Debug\RoboCatSFMLClient.exe

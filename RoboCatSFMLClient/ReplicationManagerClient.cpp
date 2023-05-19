@@ -53,14 +53,14 @@ void ReplicationManagerClient::ReadAndDoCreateAction(InputMemoryBitStream& inInp
 	
 	if (gameObject->GetClassId() == 'RCAT')
 	{
-		SoundManager::sInstance->PlaySound(SoundManager::SoundToPlay::STP_Join);
+		//SoundManager::sInstance->PlaySound(SoundManager::SoundToPlay::STP_Join);
 	}
 	if (gameObject->GetClassId() == 'YARN')
 	{
 		auto loc = RenderManager::sInstance->FindChefCenter();
 		sf::Listener::setPosition(loc.x, loc.y, 0);
 
-		SoundManager::sInstance->PlaySoundAtLocation(SoundManager::SoundToPlay::STP_Shoot, sf::Vector3f(gameObject->GetLocation().mX, gameObject->GetLocation().mY, 0));
+		//SoundManager::sInstance->PlaySoundAtLocation(SoundManager::SoundToPlay::STP_Shoot, sf::Vector3f(gameObject->GetLocation().mX, gameObject->GetLocation().mY, 0));
 
 		// Test the attenuation volume by playing the sounds from a fixed point instead.
 		//SoundManager::sInstance->PlaySoundAtLocation(SoundManager::SoundToPlay::STP_Shoot, sf::Vector3f(0, 0, 0));
@@ -86,7 +86,7 @@ void ReplicationManagerClient::ReadAndDoDestroyAction(InputMemoryBitStream& inIn
 	{
 		if (gameObject->GetClassId() == 'RCAT')
 		{
-			SoundManager::sInstance->PlaySound(SoundManager::SoundToPlay::STP_Death);
+			//SoundManager::sInstance->PlaySound(SoundManager::SoundToPlay::STP_Death);
 		}
 		gameObject->SetDoesWantToDie(true);
 		NetworkManagerClient::sInstance->RemoveNetworkIdToGameObjectMap(gameObject);

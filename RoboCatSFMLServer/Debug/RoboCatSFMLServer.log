@@ -1,1 +1,12 @@
-﻿  RoboCatSFMLServer.vcxproj -> D:\Multiplayer\MDP-CA-3\Debug\RoboCatSFMLServer.exe
+﻿  RoboCatServerPCH.cpp
+  ClientProxy.cpp
+  MouseServer.cpp
+  NetworkManagerServer.cpp
+  ReplicationManagerServer.cpp
+  ReplicationManagerTransmissionData.cpp
+  RoboCatServer.cpp
+  Server.cpp
+  ServerMain.cpp
+  YarnServer.cpp
+  Generating Code...
+  RoboCatSFMLServer.vcxproj -> D:\Multiplayer\MDP-CA-3\Debug\RoboCatSFMLServer.exe

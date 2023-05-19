@@ -58,8 +58,9 @@ void SoundManager::PlaySound(SoundToPlay p_sound)
 		break;
 	}
 }
-
-void SoundManager::PlaySoundAtLocation(SoundToPlay p_sound, sf::Vector3f p_location)
+//Had to comment out due ot exceptions being thrown
+/*
+ void SoundManager::PlaySoundAtLocation(SoundToPlay p_sound, sf::Vector3f p_location)
 {
 	switch (p_sound)
 	{
@@ -70,3 +71,5 @@ void SoundManager::PlaySoundAtLocation(SoundToPlay p_sound, sf::Vector3f p_locat
 		break;
 	}
 }
+*/
+

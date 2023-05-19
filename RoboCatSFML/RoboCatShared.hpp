@@ -35,6 +35,7 @@ const int SOCKET_ERROR = -1;
 #include "deque"
 #include "unordered_set"
 #include "cassert"
+#include <fstream>
 
 using std::shared_ptr;
 using std::unique_ptr;
@@ -55,7 +56,7 @@ class GameObject;
 #include "SFML\Audio.hpp"
 
 #include "RoboMath.hpp"
-
+#include "ConnectionDetails.hpp"
 #include "StringUtils.hpp"
 #include "SocketAddress.hpp"
 #include "SocketAddressFactory.hpp"
