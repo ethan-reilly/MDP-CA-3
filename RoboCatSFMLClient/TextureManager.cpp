@@ -1,3 +1,4 @@
+
 #include "RoboCatClientPCH.hpp"
 
 std::unique_ptr< TextureManager >		TextureManager::sInstance;
@@ -15,7 +16,8 @@ TextureManager::TextureManager()
 
 	CacheTexture("floor", "../Assets/floor.png");
 	CacheTexture("deathscreen", "../Assets/deathscreen.jpg");
-	CacheTexture("winnerscreen", "../Assets/winnerscreen.png");
+	CacheTexture("winnerscreen", "../Assets/winnerscreen.jpg");
+	CacheTexture("titlescreen", "../Assets/titlescreen.png");
 }
 
 TexturePtr	TextureManager::GetTexture(const string& inTextureName)
@@ -36,3 +38,4 @@ bool TextureManager::CacheTexture(string inTextureName, const char* inFileName)
 	return true;
 
 }
+

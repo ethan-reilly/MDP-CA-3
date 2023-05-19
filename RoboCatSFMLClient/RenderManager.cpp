@@ -8,6 +8,8 @@ RenderManager::RenderManager()
 	WindowManager::sInstance->setView(view);
 	background.setTexture(*TextureManager::sInstance->GetTexture("floor"));
 	deathscreen.setTexture(*TextureManager::sInstance->GetTexture("deathscreen"));
+	winscreen.setTexture(*TextureManager::sInstance->GetTexture("winnerscreen"));
+	titlescreen.setTexture(*TextureManager::sInstance->GetTexture("titlescreen"));
 }
 
 
@@ -72,26 +74,26 @@ uint8_t RenderManager::FindChefHealth()
 
 sf::Vector2f RenderManager::FindChefCenter()
 {
-		uint32_t chefID = (uint32_t)'RCAT';
-		for (auto obj : World::sInstance->GetGameObjects())
+	uint32_t chefID = (uint32_t)'RCAT';
+	for (auto obj : World::sInstance->GetGameObjects())
+	{
+		// Find a cat.
+		if (obj->GetClassId() == chefID)
 		{
-			// Find a cat.
-			if (obj->GetClassId() == chefID)
+			RoboCat* chef = dynamic_cast<RoboCat*>(obj.get());
+			auto id = chef->GetPlayerId();
+			auto ourID = NetworkManagerClient::sInstance->GetPlayerId();
+			if (id == ourID)
 			{
-				RoboCat* chef = dynamic_cast<RoboCat*>(obj.get());
-				auto id = chef->GetPlayerId();
-				auto ourID = NetworkManagerClient::sInstance->GetPlayerId();
-				if (id == ourID)
-				{
-					// If so grab the centre point.
-					auto centre = chef->GetLocation();
-					m_lastCatPos.x = centre.mX;
-					m_lastCatPos.y = centre.mY;
-					return sf::Vector2f(centre.mX, centre.mY);
-				}
+				// If so grab the centre point.
+				auto centre = chef->GetLocation();
+				m_lastCatPos.x = centre.mX;
+				m_lastCatPos.y = centre.mY;
+				return sf::Vector2f(centre.mX, centre.mY);
 			}
 		}
-		return sf::Vector2f(-1, -1);
+	}
+	return sf::Vector2f(-1, -1);
 }
 
 
@@ -102,8 +104,8 @@ void RenderManager::RenderComponents()
 {
 	//Get the logical viewport so we can pass this to the SpriteComponents when it's draw time
 	for (SpriteComponent* c : mComponents)
-	{	
-		WindowManager::sInstance->draw(c->GetSprite());	
+	{
+		WindowManager::sInstance->draw(c->GetSprite());
 	}
 }
 
@@ -112,27 +114,50 @@ void RenderManager::Render()
 	//
 	// Clear the back buffer
 	//
-	
+
 	//WindowManager::sInstance->clear(sf::Color(100, 149, 237, 255));
-	
+
 	WindowManager::sInstance->clear(sf::Color(255, 204, 204, 255));
-	//Background image
-	//WindowManager::sInstance->clear(sf::Image(TextureManager::sInstance->GetTexture("floor")));
-	WindowManager::sInstance->draw(background);
 
-	RenderManager::sInstance->RenderComponents();
-
-	HUD::sInstance->Render();
-
-	if (FindChefCenter() == sf::Vector2f(-1, -1))
+	if (mComponents.size() > 0)
 	{
-		sf::Vector2f died(view.getCenter().x - view.getSize().x / 2, view.getCenter().y - view.getSize().y / 2);
-		deathscreen.setPosition(died);
-		WindowManager::sInstance->draw(deathscreen);
+
+
+		//Background image
+		//WindowManager::sInstance->clear(sf::Image(TextureManager::sInstance->GetTexture("floor")));
+		WindowManager::sInstance->draw(background);
+
+		RenderManager::sInstance->RenderComponents();
+
+		HUD::sInstance->Render();
+
+
+		if (FindChefCenter() == sf::Vector2f(-1, -1))
+		{
+			sf::Vector2f died(view.getCenter().x - view.getSize().x / 2, view.getCenter().y - view.getSize().y / 2);
+			deathscreen.setPosition(died);
+			WindowManager::sInstance->draw(deathscreen);
+		}
+		else
+		{
+
+			if (FindChefHealth() > 0 &&
+				ScoreBoardManager::sInstance->GetEntry(NetworkManagerClient::sInstance->GetPlayerId())->GetScore() > 5)
+			{
+				// Draw some you are the winner screen.
+				sf::Vector2f winner(view.getCenter().x - view.getSize().x / 2, view.getCenter().y - view.getSize().y / 2);
+				winscreen.setPosition(winner);
+				WindowManager::sInstance->draw(winscreen);
+			}
+		}
+		//
+		// Present our back buffer to our front buffer
+		//
 	}
-	//
-	// Present our back buffer to our front buffer
-	//
+	else
+	{
+		//WindowManager::sInstance->draw(titlescreen);
+	}
 	WindowManager::sInstance->display();
 
 }

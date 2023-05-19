@@ -1,3 +1,4 @@
+
 //I take care of rendering things!
 
 class RenderManager
@@ -28,7 +29,11 @@ private:
 	sf::Sprite background;
 	sf::Sprite deathscreen;
 	sf::Vector2f m_lastCatPos;
+	sf::Sprite winscreen;
+	sf::Sprite titlescreen;
 
 };
+
+
 
 
