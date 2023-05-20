@@ -1,12 +1,12 @@
 #include "RoboCatPCH.hpp"
 
 Yarn::Yarn() :
-	mMuzzleSpeed(300.f),
+	mMuzzleSpeed(250.f),
 	mVelocity(Vector3::Zero),
 	mPlayerId(0)
 {
-	SetScale(GetScale() * 0.25f);
-	SetCollisionRadius(20.f);
+	SetScale(GetScale() * 0.5f);
+	SetCollisionRadius(30.f);
 }
 
 
@@ -82,7 +82,7 @@ void Yarn::InitFromShooter(RoboCat* inShooter)
 
 	Vector3 forward = inShooter->GetForwardVector();
 	SetVelocity(inShooter->GetVelocity() + forward * mMuzzleSpeed);
-	SetLocation(inShooter->GetLocation() /* + forward * 0.55f */);
+	SetLocation(inShooter->GetLocation()  /* + forward * 0.55f */);
 
 	SetRotation(inShooter->GetRotation());
 }

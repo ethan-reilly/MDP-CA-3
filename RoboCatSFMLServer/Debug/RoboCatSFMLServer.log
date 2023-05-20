@@ -1,2 +1,13 @@
-﻿  YarnServer.cpp
+﻿  RoboCatServerPCH.cpp
+  ClientProxy.cpp
+  FryServer.cpp
+  MouseServer.cpp
+  NetworkManagerServer.cpp
+  ReplicationManagerServer.cpp
+  ReplicationManagerTransmissionData.cpp
+  RoboCatServer.cpp
+  Server.cpp
+  ServerMain.cpp
+  YarnServer.cpp
+  Generating Code...
   RoboCatSFMLServer.vcxproj -> C:\Users\ethan\Downloads\GD4RoboCatSFML\MDP-CA-3\Debug\RoboCatSFMLServer.exe

@@ -56,8 +56,13 @@ void InputManager::HandleInput(EInputAction inInputAction, int inKeyCode)
 	case sf::Keyboard::S:
 		UpdateDesireFloatFromKey(inInputAction, mCurrentState.mDesiredBackAmount);
 		break;
+		// shoot fry
 	case sf::Keyboard::Space:
-		UpdateDesireVariableFromKey(inInputAction, mCurrentState.mIsShooting);
+		UpdateDesireVariableFromKey(inInputAction, mCurrentState.mIsShootingFry);
+		break;
+		// shoot burger/yarn
+	case sf::Keyboard::E:
+		UpdateDesireVariableFromKey(inInputAction, mCurrentState.mIsShootingBurger);
 		break;
 	case sf::Keyboard::Add:
 	case sf::Keyboard::Equal:

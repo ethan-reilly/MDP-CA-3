@@ -156,6 +156,7 @@
     <ClInclude Include="ConnectionDetails.hpp" />
     <ClInclude Include="DeliveryNotificationManager.hpp" />
     <ClInclude Include="Engine.hpp" />
+    <ClInclude Include="Fry.hpp" />
     <ClInclude Include="GameObject.hpp" />
     <ClInclude Include="GameObjectRegistry.hpp" />
     <ClInclude Include="InFlightPacket.hpp" />
@@ -190,6 +191,7 @@
     <ClCompile Include="ConnectionDetails.cpp" />
     <ClCompile Include="DeliveryNotificationManager.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Fry.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectRegistry.cpp" />
     <ClCompile Include="InFlightPacket.cpp" />

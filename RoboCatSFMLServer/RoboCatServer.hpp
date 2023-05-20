@@ -14,7 +14,7 @@ public:
 
 	void SetCatControlType(ECatControlType inCatControlType) { mCatControlType = inCatControlType; }
 
-	void TakeDamage(int inDamagingPlayerId);
+	void TakeDamage(int inDamagingPlayerId, int damage);
 
 protected:
 	RoboCatServer();
@@ -27,7 +27,8 @@ private:
 
 
 	float		mTimeOfNextShot;
-	float		mTimeBetweenShots;
+	float		mTimeBetweenFryShots;
+	float		mTimeBetweenBurgerShots;
 
 };
 

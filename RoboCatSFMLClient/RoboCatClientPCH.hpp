@@ -14,6 +14,7 @@
 #include "RoboCatClient.hpp"
 #include "MouseClient.hpp"
 #include "YarnClient.hpp"
+#include "FryClient.hpp"
 
 #include "HUD.hpp"
 
