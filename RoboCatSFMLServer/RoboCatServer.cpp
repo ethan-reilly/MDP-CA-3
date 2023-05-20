@@ -93,7 +93,7 @@ void RoboCatServer::HandleShooting()
 /// <param name="damage"></param>
 void RoboCatServer::TakeDamage(int inDamagingPlayerId, int damage)
 {	
-	mHealth-= damage;
+	mHealth -= damage;
 	if (mHealth <= 0.f)
 	{
 		//score one for damaging player...
