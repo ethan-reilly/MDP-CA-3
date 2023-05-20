@@ -102,15 +102,26 @@ void Server::HandleNewClient(ClientProxyPtr inClientProxy)
 	ScoreBoardManager::sInstance->AddEntry(playerId, inClientProxy->GetName());
 	SpawnCatForPlayer(playerId);
 }
-
+/// Spawn players
+/// Similar to adding mice, adds to a random location
 void Server::SpawnCatForPlayer(int inPlayerId)
 {
+	Vector3 catMin(60.f, 100.f, 0.f);
+	Vector3 catMax(1800.f, 980.f, 0.f);
+
+
 	RoboCatPtr cat = std::static_pointer_cast<RoboCat>(GameObjectRegistry::sInstance->CreateGameObject('RCAT'));
 	cat->SetColor(ScoreBoardManager::sInstance->GetEntry(inPlayerId)->GetColor());
 	cat->SetPlayerId(inPlayerId);
-	//gotta pick a better spawn location than this...
-	cat->SetLocation(Vector3(600.f - static_cast<float>(inPlayerId), 400.f, 0.f));
+
+	//cat->SetLocation(Vector3(600.f - static_cast<float>(inPlayerId), 400.f, 0.f));
+
+	Vector3 catLocation = RoboMath::GetRandomVector(catMin, catMax);
+	cat->SetLocation(catLocation);
+	//cat->SetLocation(Vector3(600.f - static_cast<float>(inPlayerId), 400.f, 0.f));
+
 }
+
 
 void Server::HandleLostClient(ClientProxyPtr inClientProxy)
 {
