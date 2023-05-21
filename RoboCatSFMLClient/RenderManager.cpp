@@ -142,7 +142,7 @@ void RenderManager::Render()
 		{
 
 			if (FindChefHealth() > 0 &&
-				ScoreBoardManager::sInstance->GetEntry(NetworkManagerClient::sInstance->GetPlayerId())->GetScore() > 5)
+				ScoreBoardManager::sInstance->GetEntry(NetworkManagerClient::sInstance->GetPlayerId())->GetScore() > 35)
 			{
 				bool gamewinner = true;
 				// Draw some you are the winner screen.
