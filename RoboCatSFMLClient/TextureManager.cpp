@@ -13,6 +13,8 @@ TextureManager::TextureManager()
 	CacheTexture("cat", "../Assets/cat.png");
 	CacheTexture("mouse", "../Assets/Health.png");
 	CacheTexture("yarn", "../Assets/yarn.png");
+	
+	CacheTexture("fry", "../Assets/fry.png");
 
 	CacheTexture("floor", "../Assets/floor.png");
 	CacheTexture("deathscreen", "../Assets/deathscreen.jpg");

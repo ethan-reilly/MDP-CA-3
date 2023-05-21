@@ -3,7 +3,9 @@
 RoboCatServer::RoboCatServer() :
 	mCatControlType(ESCT_Human),
 	mTimeOfNextShot(0.f),
-	mTimeBetweenShots(0.2f)
+	//need to adjust between burger/yarn and fry
+	mTimeBetweenFryShots(0.2f),
+	mTimeBetweenBurgerShots(0.9f)
 {}
 
 void RoboCatServer::HandleDying()
@@ -63,10 +65,20 @@ void RoboCatServer::Update()
 void RoboCatServer::HandleShooting()
 {
 	float time = Timing::sInstance.GetFrameStartTime();
-	if (mIsShooting && Timing::sInstance.GetFrameStartTime() > mTimeOfNextShot)
+	if (mIsShootingFry && Timing::sInstance.GetFrameStartTime() > mTimeOfNextShot)
+	{
+		mTimeOfNextShot = time + mTimeBetweenFryShots;
+
+		//fire!
+		FryPtr fry = std::static_pointer_cast<Fry>(GameObjectRegistry::sInstance->CreateGameObject('FRY'));
+		fry->InitFromShooter(this);
+	}
+	
+	
+	if (mIsShootingBurger && Timing::sInstance.GetFrameStartTime() > mTimeOfNextShot)
 	{
 		//not exact, but okay
-		mTimeOfNextShot = time + mTimeBetweenShots;
+		mTimeOfNextShot = time + mTimeBetweenBurgerShots;
 
 		//fire!
 		YarnPtr yarn = std::static_pointer_cast<Yarn>(GameObjectRegistry::sInstance->CreateGameObject('YARN'));
@@ -74,9 +86,14 @@ void RoboCatServer::HandleShooting()
 	}
 }
 
-void RoboCatServer::TakeDamage(int inDamagingPlayerId)
-{
-	mHealth--;
+/// <summary>
+/// Does different damage based on projectile type
+/// </summary>
+/// <param name="inDamagingPlayerId"></param>
+/// <param name="damage"></param>
+void RoboCatServer::TakeDamage(int inDamagingPlayerId, int damage)
+{	
+	mHealth -= damage;
 	if (mHealth <= 0.f)
 	{
 		mHealth = 0;

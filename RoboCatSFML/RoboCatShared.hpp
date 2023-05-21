@@ -85,6 +85,7 @@ class GameObject;
 #include "Timing.hpp"
 #include "Mouse.hpp"
 #include "Yarn.hpp"
+#include "Fry.hpp"
 #include "StringUtils.hpp"
 #include "ScoreBoardManager.hpp"
 

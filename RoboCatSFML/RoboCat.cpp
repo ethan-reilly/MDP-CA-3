@@ -12,7 +12,8 @@ RoboCat::RoboCat() :
 	mCatRestitution(0.1f),
 	mThrustDir(0.f),
 	mPlayerId(0),
-	mIsShooting(false),
+	mIsShootingFry(false),
+	mIsShootingBurger(false),
 	mHealth(10)
 {
 	SetCollisionRadius(60.f);
@@ -31,7 +32,8 @@ void RoboCat::ProcessInput(float inDeltaTime, const InputState& inInputState)
 	mThrustDir = inputForwardDelta;
 
 
-	mIsShooting = inInputState.IsShooting();
+	mIsShootingFry = inInputState.IsShootingFry();
+	mIsShootingBurger = inInputState.IsShootingBurger();
 
 }
 
