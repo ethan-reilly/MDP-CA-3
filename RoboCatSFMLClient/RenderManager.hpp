@@ -31,6 +31,7 @@ private:
 	sf::Vector2f m_lastCatPos;
 	sf::Sprite winscreen;
 	sf::Sprite titlescreen;
+	bool gamewinner;
 
 };
 

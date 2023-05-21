@@ -79,6 +79,7 @@ void RoboCatServer::TakeDamage(int inDamagingPlayerId)
 	mHealth--;
 	if (mHealth <= 0.f)
 	{
+		mHealth = 0;
 		//score one for damaging player...
 		ScoreBoardManager::sInstance->IncScore(inDamagingPlayerId, 1);
 

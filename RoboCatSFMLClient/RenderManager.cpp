@@ -144,10 +144,15 @@ void RenderManager::Render()
 			if (FindChefHealth() > 0 &&
 				ScoreBoardManager::sInstance->GetEntry(NetworkManagerClient::sInstance->GetPlayerId())->GetScore() > 5)
 			{
+				bool gamewinner = true;
 				// Draw some you are the winner screen.
 				sf::Vector2f winner(view.getCenter().x - view.getSize().x / 2, view.getCenter().y - view.getSize().y / 2);
 				winscreen.setPosition(winner);
 				WindowManager::sInstance->draw(winscreen);
+				if (gamewinner == true && ScoreBoardManager::sInstance->GetEntry(NetworkManagerClient::sInstance->GetPlayerId())->GetScore() < 5)
+				{
+					sInstance.reset(new RenderManager());
+				}
 			}
 		}
 		//
