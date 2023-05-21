@@ -151,7 +151,7 @@ void RenderManager::Render()
 				WindowManager::sInstance->draw(winscreen);
 				if (gamewinner == true && ScoreBoardManager::sInstance->GetEntry(NetworkManagerClient::sInstance->GetPlayerId())->GetScore() < 5)
 				{
-					sInstance.reset(new RenderManager());
+					WindowManager::sInstance->draw(deathscreen);
 				}
 			}
 		}

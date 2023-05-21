@@ -2,6 +2,7 @@
 
 bool Client::StaticInit()
 {
+	ConnectionDetails::StaticInit();
 	// Create the Client pointer first because it initializes SDL
 	Client* client = new Client();
 	InputManager::StaticInit();
@@ -26,7 +27,7 @@ Client::Client()
 	GameObjectRegistry::sInstance->RegisterCreationFunction('YARN', YarnClient::StaticCreate);
 
 	string destination = StringUtils::GetCommandLineArg(1);
-	string name = StringUtils::GetCommandLineArg(2);
+	string name = ConnectionDetails::sInstance->GetClientName();
 
 	SocketAddressPtr serverAddress = SocketAddressFactory::CreateIPv4FromString(destination);
 

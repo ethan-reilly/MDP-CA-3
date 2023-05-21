@@ -25,6 +25,7 @@ void ClientProxy::UpdateLastPacketTime()
 void	ClientProxy::HandleCatDied()
 {
 	mTimeToRespawn = Timing::sInstance.GetFrameStartTime() + kRespawnDelay;
+
 }
 
 void	ClientProxy::RespawnCatIfNecessary()

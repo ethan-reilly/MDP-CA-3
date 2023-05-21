@@ -1,1 +1,30 @@
-﻿  RoboCatSFML.vcxproj -> D:\Multiplayer\MDP-CA-3\Debug\RoboCatSFML.lib
+﻿  RoboCatPCH.cpp
+  AckRange.cpp
+  ConnectionDetails.cpp
+  DeliveryNotificationManager.cpp
+  Engine.cpp
+  GameObject.cpp
+  GameObjectRegistry.cpp
+  InFlightPacket.cpp
+  InputState.cpp
+  MemoryBitStream.cpp
+  Mouse.cpp
+  Move.cpp
+  MoveList.cpp
+  NetworkManager.cpp
+  RoboCat.cpp
+  RoboMath.cpp
+  ScoreBoardManager.cpp
+  SocketAddress.cpp
+  SocketAddressFactory.cpp
+  SocketUtil.cpp
+  StringUtils.cpp
+  Generating Code...
+  Compiling...
+  TCPSocket.cpp
+  Timing.cpp
+  UDPSocket.cpp
+  World.cpp
+  Yarn.cpp
+  Generating Code...
+  RoboCatSFML.vcxproj -> D:\Multiplayer\MDP-CA-3\Debug\RoboCatSFML.lib
